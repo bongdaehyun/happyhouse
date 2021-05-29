@@ -2,39 +2,39 @@
 
 # 목적
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled.png)
+![image_readme/Untitled.png](image_readme/Untitled.png)
 
 - 리뷰들을 더욱 빠르게 파악하기 위한 시각적 자료를 통해서 사용자의 편의를 돕기
 
 # 개발 환경
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%201.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%201.png)
+![image_readme/Untitled%201.png](image_readme/Untitled%201.png)
 
 # 핵심 알고리즘
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%202.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%202.png)
+![image_readme/Untitled%202.png](image_readme/Untitled%202.png)
 
 ---
 
 # UseCase
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%203.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%203.png)
+![image_readme/Untitled%203.png](image_readme/Untitled%203.png)
 
 ---
 
 # ERD
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%204.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%204.png)
+![image_readme/Untitled%204.png](image_readme/Untitled%204.png)
 
 ---
 
 # 화면 설계
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%205.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%205.png)
+![image_readme/Untitled%205.png](image_readme/Untitled%205.png)
 
 ---
 
-![HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%206.png](HappyHouse%20b4b0a59e6fc5458abecf8a1a85197201/Untitled%206.png)
+![image_readme/Untitled%206.png](image_readme/Untitled%206.png)
 
 ---
 
