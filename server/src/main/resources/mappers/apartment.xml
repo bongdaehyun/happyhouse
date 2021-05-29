@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.repo.ApartRepo">
+
+	<select id="selectBuildYear" resultType="com.ssafy.happyhouse.dto.HousedealDto">
+	select DISTINCT hi.AptName,hd.dong, hd.code, hd.dealAmount, hd.buildYear, hd.dealYear, hd.dealMonth, 
+	hd.dealDay, hd.area, hd.floor, hd.jibun, hd.type, hd.rentMoney, hi.lat, hi.lng 
+	FROM houseinfo as hi inner join housedeal as hd on hd.AptName=hi.AptName where hd.buildYear &gt;= #{buildYear} and hd.dong = #{dong}
+	</select>
+	<select id="selectAptName" resultType="com.ssafy.happyhouse.dto.HousedealDto">
+	select DISTINCT hi.AptName,hd.dong, hd.code, hd.dealAmount, hd.buildYear, hd.dealYear, hd.dealMonth, 
+	hd.dealDay, hd.area, hd.floor, hd.jibun, hd.type, hd.rentMoney, hi.lat, hi.lng 
+	FROM houseinfo as hi inner join housedeal as hd on hd.AptName=hi.AptName where hd.AptName Like concat('%',#{AptName},'%') and hd.dong = #{dong}
+	</select>
+	<select id="selectDong" resultType="com.ssafy.happyhouse.dto.HousedealDto">
+	select DISTINCT hi.AptName,hd.dong, hd.code, hd.dealAmount, hd.buildYear, hd.dealYear, hd.dealMonth, 
+	hd.dealDay, hd.area, hd.floor, hd.jibun, hd.type, hd.rentMoney, hi.lat, hi.lng 
+	FROM houseinfo as hi inner join housedeal as hd on hd.AptName=hi.AptName where hd.dong = #{dong}
+	</select>
+	
+	<select id="search"></select>
+	
+</mapper>

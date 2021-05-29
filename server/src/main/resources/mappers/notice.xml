@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.repo.NoticeRepo">
+
+<!-- 공지 게시글 등록 start -->
+	<insert id="registerNotice">
+		insert into notice values(#{noticeid},#{noticetitle},#{noticecontent},#{noticewriter} ,#{date})
+	</insert>
+<!-- 공지 게시글 등록 end -->
+
+	<select id="listNotice" resultType="com.ssafy.happyhouse.dto.NoticeDto">
+		select * from notice
+	</select>
+	
+<!-- 공지 게시글 수정 start -->
+	<update id="modifyNotice">
+		update notice 
+		set  noticetitle=#{noticetitle},noticecontent=#{noticecontent}
+		where noticeid=#{noticeid}
+	</update>
+<!-- 공지 게시글 수정 end -->
+
+
+<!-- 공지 게시글 삭제 start -->
+	<delete id="deleteNotice">
+		delete from notice where noticeid=#{noticeid}
+	</delete>
+<!-- 공지 게시글 삭제 start -->
+
+
+<!-- 공지 게시글 상세 선택 start  -->
+	<select id="selectNotice" resultType="com.ssafy.happyhouse.dto.NoticeDto">
+		select * from notice where noticeid=#{noticeid}
+	</select>
+<!-- 공지 게시글 상세 선택 end  -->
+
+<!-- 작성자로 검색 start  -->
+	<select id="selectauthor">
+		select * from notice where noticewriter=#{noticewriter}
+	</select>
+<!-- 작성자로 검색 end  -->
+
+
+<!-- 글제목으로 검색 start -->
+	<!-- <select id="selecttitle">
+		select * from notice where title=#{title}
+	</select> -->
+<!-- 글제목으로 검색 end -->
+</mapper>

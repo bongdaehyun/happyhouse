@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.repo.reviewRepo">
+
+	<select id="selectAll" resultType="aptreviewDto">
+		select * from aptreview where aptName=#{aptName} order by age asc
+	</select>
+	
+	<select id="selectWord" resultType="reviewCountDto">
+		select * from reviewtotal order by count desc;
+	</select>
+	<select id="searchAge" resultType="aptreviewDto">
+		select * from aptreview where age=#{age}
+	</select>
+</mapper>
