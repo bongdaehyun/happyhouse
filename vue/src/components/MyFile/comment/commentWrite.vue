@@ -1,0 +1,110 @@
+<template>
+  <div class="regist">
+    <div v-if="this.modifyComment != null" class="regist_form">
+      <textarea id="comment" name="comment" v-model="modifyComment.comment" cols="35" rows="2"></textarea>
+      <button class="small" @click="updateCommentCancel">취소</button>
+      <button class="small" @click="updateComment">수정</button>
+    </div>
+    <div v-else                            class="regist_form">
+      <textarea id="comment" name="comment" v-model="comment" cols="35" rows="2"></textarea>
+      <button class="btn-neutral" @click="registComment">등록</button>
+    </div>
+  </div>
+</template>
+
+<script>
+import http from "@/util/http-common";
+import {mapGetters} from 'vuex';
+
+export default {
+  name: "commentwrite",
+  data() {
+    return {
+      // 차후 작성자 이름은 로그인 구현후 로그인한 사용자로 바꾼다.
+      name: "",
+      comment: ""
+    };
+  },
+  computed:{
+    ...mapGetters(["getUserName"])
+    },
+created(){
+    this.name=this.getUserName
+},
+  props: {
+    qnaid: Number,
+    modifyComment: Object
+  },
+  methods: {
+    registComment() {
+      http.post("/comment/", {
+          name: this.name,
+          comment: this.comment,
+          qnaid: this.qnaid,
+          comment_time:new Date()
+        }).then(({ data }) => {
+          let msg = "등록 처리시 문제가 발생했습니다.";
+          if (data === "success") {
+            msg = "등록이 완료되었습니다.";
+          }
+          alert(msg);
+
+          // 작성글 지우기
+          this.comment = "";
+          // 댓글 얻기.
+          this.$store.dispatch("getComments", this.qnaid);
+        });
+    },
+    updateComment() {
+      http.put(`/comment`, {
+          comment_no: this.modifyComment.comment_no,
+          comment: this.modifyComment.comment
+        }).then(({ data }) => {
+          let msg = "수정 처리시 문제가 발생했습니다.";
+          if (data === "success") {
+            msg = "수정이 완료되었습니다.";
+          }
+          alert(msg);
+
+        //(댓글) 얻기.
+        this.$store.dispatch("getComments", this.modifyComment.qnaid);
+          this.$emit("modify-comment-cancel", false);
+        });
+    },
+    updateCommentCancel() {
+      this.$emit("modify-comment-cancel", false);
+    }
+  }
+};
+</script>
+
+<style scoped>
+.regist {
+  padding: 10px;
+}
+.regist_form {
+  text-align: left;
+  border-radius: 5px;
+  background-color: #d6e7fa;
+  padding: 20px;
+}
+textarea {
+  width: 90%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #787878;
+  font-size: large;
+}
+button {
+  float: right;
+}
+button.small {
+  width: 60px;
+  font-size: small;
+  font-weight: bold;
+}
+</style>
