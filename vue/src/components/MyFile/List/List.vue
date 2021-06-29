@@ -189,7 +189,7 @@
         },
         data(){
       return{
-          appKey:'a3446703be8506556fa690850f5621d0',
+          appKey:'your key',
           level:3,
           center:{lat:37.50268606315912, lng:127.02663133540325},
           mapTypeId: VueDaumMap.MapTypeId.NORMAL,
